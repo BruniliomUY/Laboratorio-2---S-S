@@ -1,0 +1,25 @@
+El zero-padding es una técnica que consiste en añadir ceros a los bordes o al final de una matriz, señal o imagen para aumentar su tamaño. Se utiliza comúnmente en procesamiento de señales, aprendizaje automático (como en redes neuronales convolucionales) y criptografía. Sus propósitos principales incluyen evitar la pérdida de información en los bordes durante las convoluciones, asegurar que los datos tengan un tamaño o forma específica para un algoritmo, o mejorar la resolución de una señal en transformadas de Fourier. 
+
+Qué hace
+
+Calcula la DFT de la señal con fft(x).
+
+Centra el espectro en 0 Hz con fftshift.
+
+Genera el eje de frecuencias freqs correspondiente a la DFT.
+
+Grafica la magnitud.
+
+Relación con la DTFT
+
+La DTFT es teóricamente continua en frecuencia (
+𝑓
+∈
+𝑅
+f∈R), mientras que la DFT es discreta en frecuencia (solo N puntos).
+
+Al hacer zero-padding (añadir ceros al final de tu señal), lo que logras es incrementar el número de puntos de la FFT:
+
+La resolución en frecuencia aparente aumenta (los picos se ven más “finos” y puedes aproximar la DTFT mejor).
+
+No cambias las frecuencias reales presentes, solo interpolas entre las muestras de la DFT.
