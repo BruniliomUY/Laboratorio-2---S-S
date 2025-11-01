@@ -87,7 +87,7 @@ CTFT(y, SAMPLE_RATE)
 SAMPLE_RATE = 250  # Hertz
 DURATION = 0.5  # Seconds
 # Generamos una señal sinusoidal de 150 Hz durante 5 segundos
-x, y = senoidal(100, 250, DURATION)
+x, y = senoidal(100, SAMPLE_RATE, DURATION)
 plt.plot(x, y)
 plt.ylim(1, -1)
 plt.show()
