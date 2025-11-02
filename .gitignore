@@ -18,10 +18,10 @@ __pycache__/
 .ipynb_checkpoints
 *.ipynb_checkpoints
 
-# Archivos de salida
-*.wav
-*.mp4
-*.png
+# Archivos de salida (comentado para incluir archivos del proyecto)
+# *.wav
+# *.mp4
+# *.png
 
 # Sistema operativo
 .DS_Store
