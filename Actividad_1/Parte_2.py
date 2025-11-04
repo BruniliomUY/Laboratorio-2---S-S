@@ -34,7 +34,7 @@ def DFT(x, fs, title="Espectro de Magnitud (FFT)"):
 
     return freqs, X_mag
 
-def CTFT(x, fs, title="Espectro de Magnitud (FFT con Zero-Padding)", padding_factor=4):
+def DFT_Zero_Padding(x, fs, title="Espectro de Magnitud (FFT con Zero-Padding)", padding_factor=4):
     """
     Calcula y grafica la FFT de una señal x muestreada a frecuencia fs con zero-padding.
 
@@ -49,6 +49,7 @@ def CTFT(x, fs, title="Espectro de Magnitud (FFT con Zero-Padding)", padding_fac
     
     # FFT con zero-padding
     X = fft(x, N_pad)
+    X=(1/fs)*X
     X_shifted = fftshift(X)
     freqs = fftshift(fftfreq(N_pad, d=1.0 / fs))
     X_mag = np.abs(X_shifted)
@@ -73,24 +74,24 @@ def CTFT(x, fs, title="Espectro de Magnitud (FFT con Zero-Padding)", padding_fac
 SAMPLE_RATE = 150  # Hertz
 DURATION = 0.5  # Seconds
 # Generamos una señal sinusoidal de 150 Hz durante 5 segundos
-x, y = senoidal(100, SAMPLE_RATE, DURATION)
+x, y = senoidal(73, SAMPLE_RATE, DURATION)
 plt.plot(x, y)
 plt.ylim(1, -1)
 plt.show()
 
 DFT(y, SAMPLE_RATE)
-CTFT(y, SAMPLE_RATE)
+DFT_Zero_Padding(y, SAMPLE_RATE)
 
-#Ejemplo fs>fmax cumple la condicion de Nyquist, se produce aliasing
+#Ejemplo fs>fmax cumple la condicion de Nyquist, no se produce aliasing
 
 #def Señal sinusoidal de prueba
 SAMPLE_RATE = 250  # Hertz
 DURATION = 0.5  # Seconds
 # Generamos una señal sinusoidal de 150 Hz durante 5 segundos
-x, y = senoidal(100, SAMPLE_RATE, DURATION)
+x, y = senoidal(73, SAMPLE_RATE, DURATION)
 plt.plot(x, y)
 plt.ylim(1, -1)
 plt.show()
 
 DFT(y, SAMPLE_RATE)
-CTFT(y, SAMPLE_RATE)
+DFT_Zero_Padding(y, SAMPLE_RATE)
