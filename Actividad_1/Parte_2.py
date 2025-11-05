@@ -49,7 +49,6 @@ def DFT_Zero_Padding(x, fs, title="Espectro de Magnitud (FFT con Zero-Padding)",
     
     # FFT con zero-padding
     X = fft(x, N_pad)
-    X=(1/fs)*X
     X_shifted = fftshift(X)
     freqs = fftshift(fftfreq(N_pad, d=1.0 / fs))
     X_mag = np.abs(X_shifted)
