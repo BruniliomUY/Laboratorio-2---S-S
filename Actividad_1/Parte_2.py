@@ -20,6 +20,7 @@ def DFT(x, fs, title="Espectro de Magnitud (FFT)"):
     """
     N = len(x)
     X = fft(x)
+    X = (1/fs)*X # Normalización por fs
     X_shifted = fftshift(X)
     freqs = fftshift(fftfreq(N, d=1.0 / fs))
     X_mag = np.abs(X_shifted)
@@ -49,6 +50,7 @@ def DFT_Zero_Padding(x, fs, title="Espectro de Magnitud (FFT con Zero-Padding)",
     
     # FFT con zero-padding
     X = fft(x, N_pad)
+    X = (1/fs)*X # Normalización por fs
     X_shifted = fftshift(X)
     freqs = fftshift(fftfreq(N_pad, d=1.0 / fs))
     X_mag = np.abs(X_shifted)
