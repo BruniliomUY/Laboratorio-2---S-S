@@ -27,9 +27,9 @@ Durante la actividad se realizaron las siguientes etapas:
 ---
 
 ## 🧪 Herramientas utilizadas
-- **Lenguaje:** Python / MATLAB / Octave *(indicar el utilizado)*  
-- **Librerías:** NumPy, Matplotlib, SciPy *(si aplica)*  
-- **Entorno:** Jupyter Notebook o similar  
+- **Lenguaje:** Python / MATLAB
+- **Librerías:** NumPy, Matplotlib
+- **Entorno:** Jupyter Notebook
 
 ---
 
@@ -45,7 +45,7 @@ Al finalizar la práctica, el estudiante será capaz de:
 ## 🧾 Estructura del repositorio
 ```bash
 ├── /notebooks/         # Simulaciones y gráficos
-├── /data/              # Archivos de señal (si aplica)
+├── /data/              # Archivos de señal 
 ├── /figures/           # Imágenes o resultados
 ├── README.md           # Este archivo
-└── main.py             # Código principal (si aplica)
+└── main.py             # Código principal 
